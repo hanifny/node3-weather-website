@@ -10,8 +10,8 @@ const forecast = (address, callback) => {
         if(error) {
             callback('Unable to connect to weather service!', undefined);
         } else {
-            const {weather_descriptions, temperature, feelslike} = data.current
-            callback(undefined, `${weather_descriptions}. It is currently ${temperature} degrees out. It feels like ${feelslike} degress out.`);
+            const {weather_descriptions, temperature, feelslike, humidity} = data.current
+            callback(undefined, `${weather_descriptions}. It is currently ${temperature} degrees out. It feels like ${feelslike} degress out. The humidity is ${humidity}%.`);
         }
     
     })
